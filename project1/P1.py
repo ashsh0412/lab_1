@@ -1,4 +1,4 @@
-import p1_random as p1
+import project1.p1_random as p1
 rng = p1.P1Random()
 
 user_db = []
