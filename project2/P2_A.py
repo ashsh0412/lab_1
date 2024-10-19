@@ -44,27 +44,6 @@ def to_hex_string(data):
     hex_string = ''.join(new_list)
     print(hex_string)
 
-def count_runs(flat_data):
-    pass
-
-def encode_rle(flat_data):
-    pass
-
-def get_decoded_length(rle_data):
-    pass
-
-def decode_rle(rle_data):
-    pass
-
-def string_to_data(data_string):
-    pass
-
-def to_rle_string(rle_data):
-    pass
-
-def string_to_rle(rle_string):
-    pass
-
 def check_option(option):
     if option == 0:
         pass
@@ -74,21 +53,5 @@ def check_option(option):
         print(loaded_file)
     elif option == 2:
         display_image(test_image)
-    elif option == 3:
-        RLE_string = input("Enter an RLE string to be decoded: ")
-        
-    elif option == 4:
-        hex_string_RLE = input("Enter the hex string holding RLE data: ")
-
-    elif option == 5:
-        hex_string_flat = input("Enter the hex string holding flat data: ")
-    elif option == 6:
-        pass
-    elif option == 7:
-        RLE_representation = input("RLE representation: ")
-    elif option == 8:
-        RLE_hex_values = input("RLE hex values: ")
-    elif option == 9:
-        Flat_hex_value = input("Flat hex values: ")
     
 starting()
