@@ -3,15 +3,21 @@ import math
 result = []
 num_of_cal = 0
 
+
 def format_result(value):
     if isinstance(value, float):
-        return f"{value:.2f}".rstrip('0').rstrip('.') if not value.is_integer() else f"{value:.1f}"
+        return (
+            f"{value:.2f}".rstrip("0").rstrip(".")
+            if not value.is_integer()
+            else f"{value:.1f}"
+        )
     else:
         return str(value)
 
+
 def check_input(input_value, x, y):
     global num_of_cal
-    
+
     if input_value == 1:
         anw = addition(x, y)
     elif input_value == 2:
@@ -50,23 +56,30 @@ def check_input(input_value, x, y):
     print(f"Current Result: {format_result(anw)}\n")
     start_calculation()
 
+
 def addition(x, y):
     return x + y
+
 
 def substraction(x, y):
     return x - y
 
+
 def multiplication(x, y):
     return x * y
+
 
 def division(x, y):
     return x / y
 
+
 def exponential(x, y):
     return math.pow(x, y)
 
+
 def logarithm(x, y):
     return math.log(y, x)  # x is the base, y is the argument
+
 
 def average():
     if result:
@@ -75,21 +88,22 @@ def average():
         return total_sum, total_sum / count
     return 0, 0
 
+
 def menu_selection():
     global result
     RESULT = sum(result) if result else 0
     try:
         input_value = int(input("Enter Menu Selection: "))
-        
+
         if input_value == 0:
             print("Thanks for using this calculator. Goodbye!")
             return
-        
+
         elif input_value < 0 or input_value > 7:
             print("Error: Invalid selection!\n")
             menu_selection()
             return
-        
+
         if input_value in [1, 2, 3, 4, 5, 6]:
             try:
                 x = input("Enter first operand: ")
@@ -106,9 +120,9 @@ def menu_selection():
                 print("Error: Invalid input!")
                 menu_selection()
                 return
-            
+
             check_input(input_value, x, y)
-        
+
         elif input_value == 7:
             check_input(input_value, 0, 0)  # Dummy values for x and y
 
@@ -117,6 +131,7 @@ def menu_selection():
         menu_selection()
     except EOFError:
         pass
+
 
 def start_calculation():
     print("Calculator Menu")
@@ -129,8 +144,9 @@ def start_calculation():
     print("5. Exponentiation")
     print("6. Logarithm")
     print("7. Display Average\n")
-    
-    menu_selection()  
+
+    menu_selection()
+
 
 print("Current Result: 0.0\n")
 start_calculation()

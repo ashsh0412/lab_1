@@ -26,7 +26,8 @@ def movie_time(movie_choice):
             elif showtime == 2 or 3 or 4:
                 return "after 2"
 
-# return amount of adult and children ticket number            
+
+# return amount of adult and children ticket number
 def ticketing():
     adult_ticket = int(input("Adult tickets:	"))
     kid_ticket = int(input("Kid tickets:	"))
@@ -36,11 +37,13 @@ def ticketing():
     else:
         return adult_ticket, kid_ticket
 
+
 def calculate_ticket_price(movietime, adult_ticket_number, kid_ticket_number):
     if movietime == "before 2":
         return adult_ticket_number * 11.17 + kid_ticket_number * 8
     else:
         return adult_ticket_number * 12.45 + kid_ticket_number * 9.68
+
 
 # adult : 11.17 before 2 12.45 after 2 children : 8 before 2 9.68 after 2
 movie_choice = input(

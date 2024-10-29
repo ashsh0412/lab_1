@@ -1,27 +1,31 @@
 result = []
 
+
 def collatz_sequence(num):
     result.append(num)
     if num == 1:
         print(*result)
     elif num % 2 == 0:
-        collatz_sequence(num // 2) 
+        collatz_sequence(num // 2)
     else:
         collatz_sequence(3 * num + 1)
+
 
 def print_backwards(syntax):
     a = list(syntax)
     a.reverse()
     print(*a, sep="")
 
+
 def hammer_profit(cost, sold):
     num = len(sold)
     amount = sum(sold)
-    return amount - cost*num
+    return amount - cost * num
+
 
 def format_names(name_list):
     name1 = name_list[0]
-    if ',' in name1:
+    if "," in name1:
         pass
     else:
         name1 = name1.split()
@@ -31,7 +35,7 @@ def format_names(name_list):
         name_list[0] = name1
 
     name2 = name_list[1]
-    if ',' in name2:
+    if "," in name2:
         pass
     else:
         name2 = name2.split()
@@ -41,7 +45,7 @@ def format_names(name_list):
         name_list[1] = name2
 
     name3 = name_list[2]
-    if ',' in name2:
+    if "," in name2:
         pass
     else:
         name3 = name3.split()
@@ -51,7 +55,7 @@ def format_names(name_list):
         name_list[2] = name3
 
     name4 = name_list[3]
-    if ',' in name4:
+    if "," in name4:
         pass
     else:
         name4 = name4.split()

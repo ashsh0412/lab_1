@@ -16,12 +16,14 @@ def dateCalculator():
         print("Days should be lesser than 31")
         dateCalculator()
     else:
-        a = year1*360 + month1*30 + day1
-        b = year2*360 + month2*30 + day2
-        c = b-a
-        if c<0:
+        a = year1 * 360 + month1 * 30 + day1
+        b = year2 * 360 + month2 * 30 + day2
+        c = b - a
+        if c < 0:
             c = -c
-        print(f"The difference between {month1}/{day1}/{year1} and {month2}/{day2}/{year2} is {c} days!")
+        print(
+            f"The difference between {month1}/{day1}/{year1} and {month2}/{day2}/{year2} is {c} days!"
+        )
 
 
 dateCalculator()

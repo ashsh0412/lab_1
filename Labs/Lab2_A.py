@@ -8,4 +8,3 @@ elif a != b != c:
     print("This is a scalene triangle!")
 else:
     print("This is an isosceles triangle!")
-    

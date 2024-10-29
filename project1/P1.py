@@ -1,4 +1,5 @@
 import project1.p1_random as p1
+
 rng = p1.P1Random()
 
 user_db = []
@@ -7,10 +8,11 @@ number_of_dealer_wins = 0
 number_of_ties = 0
 game_number = 1
 
+
 def get_card():
-    my_number = rng.next_int(13)+1
+    my_number = rng.next_int(13) + 1
     if my_number == 1:
-        print("Your card is a ACE!") 
+        print("Your card is a ACE!")
         user_db.append(1)
     elif my_number == 11:
         print("Your card is a JACK!")
@@ -22,13 +24,13 @@ def get_card():
         print("Your card is a KING!")
         user_db.append(10)
     else:
-        print(f"Your card is a {my_number}!") 
+        print(f"Your card is a {my_number}!")
         user_db.append(my_number)
-    
+
     print(f"Your hand is: {sum(user_db)}\n")
-    
+
     hand_total = sum(user_db)
-    
+
     if hand_total > 21:
         print("You exceeded 21! You lose.")
         return False
@@ -36,6 +38,7 @@ def get_card():
         print("BLACKJACK! You win!")
         return True
     return None
+
 
 def give_options():
     global number_of_play_wins, number_of_dealer_wins, number_of_ties, game_number
@@ -79,12 +82,14 @@ def give_options():
         else:
             print("It's a tie! No one wins!")
             number_of_ties += 1
-        
+
         start_game()
 
     elif chosen_option == 3:
         total_games = number_of_play_wins + number_of_dealer_wins + number_of_ties
-        win_percentage = (number_of_play_wins / total_games) * 100 if total_games > 0 else 0
+        win_percentage = (
+            (number_of_play_wins / total_games) * 100 if total_games > 0 else 0
+        )
         print(f"Number of Player wins: {number_of_play_wins}")
         print(f"Number of Dealer wins: {number_of_dealer_wins}")
         print(f"Number of tie games: {number_of_ties}")
@@ -100,6 +105,7 @@ def give_options():
         print("Please enter an integer value between 1 and 4.\n")
         give_options()
 
+
 def start_game():
     global game_number
     user_db.clear()
@@ -107,5 +113,6 @@ def start_game():
     game_number += 1
     get_card()
     give_options()
+
 
 start_game()

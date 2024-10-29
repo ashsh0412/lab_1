@@ -1,5 +1,6 @@
 from console_gfx import display_image, load_file, test_image, test_rainbow
 
+
 def menu():
     print("Welcome to the RLE image encoder!\n")
     print("Displaying Spectrum Image:")
@@ -17,10 +18,12 @@ def menu():
     print("8. Display Hex RLE Data")
     print("9. Display Hex Flat Data\n")
 
+
 def starting():
     menu()
     option = int(input("Select a Menu Option: "))
     check_option(option)
+
 
 def to_hex_string(data):
     new_list = []
@@ -40,9 +43,10 @@ def to_hex_string(data):
             new_list.append("E")
         elif data[i] == 15:
             new_list.append("F")
-    
-    hex_string = ''.join(new_list)
+
+    hex_string = "".join(new_list)
     print(hex_string)
+
 
 def check_option(option):
     if option == 0:
@@ -53,5 +57,6 @@ def check_option(option):
         print(loaded_file)
     elif option == 2:
         display_image(test_image)
-    
+
+
 starting()
