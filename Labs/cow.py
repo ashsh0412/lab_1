@@ -11,3 +11,7 @@ class Cow:
 
     def set_image(self, image):
         self._image = image
+
+    name = property(get_name)
+
+    image = property(get_image, set_image)
