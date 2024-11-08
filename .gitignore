@@ -1,5 +1,3 @@
 .venv
-pyproject.toml
-get-pip.py
-poetry.lock
-__pycache__
+.pyproject.toml
+.get-pip.py
