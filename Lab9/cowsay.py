@@ -1,6 +1,7 @@
 # File: cowsay.py
 import sys
 from heifer_generator import get_cows
+from dragon import Dragon
 
 def list_cows():
     cows = get_cows()
@@ -41,7 +42,6 @@ def main():
     print(message)
     print(cow.get_image())
     
-    from dragon import Dragon
     if isinstance(cow, Dragon):
         if cow.can_breath_fire():
             print("This dragon can breathe fire.")
